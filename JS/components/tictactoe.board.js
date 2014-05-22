@@ -16,6 +16,7 @@ define(['jQuery', '../templates/templates'], function(jq, Templates){
 			jq('.cell, .results').text('');
 			jq('.playAgain').addClass('hidden');
 			cells = [0,0,0,0,0,0,0,0,0];
+			cellsFilled = 0;
 	   },
        generateRandomNumber : function(){
          var number = Math.floor((Math.random() * 9) + 1);
