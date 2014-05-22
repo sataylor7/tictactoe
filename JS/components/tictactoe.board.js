@@ -13,7 +13,9 @@ define(['jQuery', '../templates/templates'], function(jq, Templates){
             container.append(template(cells));
        },
 	   clearBoard : function(){
-			jq('.cell').text('');
+			jq('.cell, .results').text('');
+			jq('.playAgain').addClass('hidden');
+			cells = [0,0,0,0,0,0,0,0,0];
 	   },
        generateRandomNumber : function(){
          var number = Math.floor((Math.random() * 9) + 1);
@@ -43,7 +45,7 @@ define(['jQuery', '../templates/templates'], function(jq, Templates){
               cellsFilled++;
               this.checkWinner(cells[choiceNum]);
 
-              if(cellsFilled == 9){
+              if(cellsFilled === 9){
                 jq('.results').text('the game ended in a draw');
 				jq('.start').addClass('hidden');
                 jq('.playAgain').removeClass('hidden');
