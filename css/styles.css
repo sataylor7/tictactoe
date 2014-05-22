@@ -1,0 +1,51 @@
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+ }
+.container{
+    width:700px;
+    margin:10px auto;
+    border:1px solid blue;
+}
+
+.slider{
+    width:500px;
+    margin:10px auto;
+}
+
+.slider .bar{
+    background:#aaa;
+    height:1px;
+    border:1px solid #aeaeae;
+    position:relative;
+}
+
+.slider .bar .sliderControl{
+    background: #efefef;
+    border-radius:5px;
+    height:16px;
+    width:12px;
+    top:-7px;
+    position:relative;
+    left:0;
+    cursor:pointer;
+}
+
+#tictactoeCont{
+    width:460px;
+    margin:25px auto;
+    display:table;
+}
+#tictactoeCont .cell{
+    width:150px;
+    border:1px solid black;
+    height:150px;
+    display:block;
+    float:left;
+    margin:0;
+    padding:0;
+}
+.hidden{
+    display:none;
+}
