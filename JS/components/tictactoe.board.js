@@ -12,8 +12,11 @@ define(['jQuery', '../templates/templates'], function(jq, Templates){
             var template = Handlebars.templates['tictactoe'];
             container.append(template(cells));
        },
+	   clearBoard : function(){
+			jq('.cell').text('');
+	   },
        generateRandomNumber : function(){
-         var number = Math.floor(Math.random() * 8);
+         var number = Math.floor((Math.random() * 9) + 1);
          return number;
        },
        play : function(){
@@ -42,6 +45,8 @@ define(['jQuery', '../templates/templates'], function(jq, Templates){
 
               if(cellsFilled == 9){
                 jq('.results').text('the game ended in a draw');
+				jq('.start').addClass('hidden');
+                jq('.playAgain').removeClass('hidden');
               }
 
           }else{
@@ -54,7 +59,12 @@ define(['jQuery', '../templates/templates'], function(jq, Templates){
        checkWinner : function(symbol){
             for(var i = 0; i < winningCombinations.length; i++){
                 if(cells[winningCombinations[i][0]] == symbol && cells[winningCombinations[i][1]] == symbol && cells[winningCombinations[i][2]] == symbol){
-                    jq('.results').text(symbol + 'WON!');
+					if(symbol === 1){
+						symbol = 'X';
+					}else{
+						symbol = 'O';
+					}
+                    jq('.results').text(symbol + ' WON!');
                     jq('.start').addClass('hidden');
                     jq('.playAgain').removeClass('hidden');
                 }

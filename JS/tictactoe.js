@@ -12,6 +12,7 @@ require(['../libs/jquery.noConflict', '../components/tictactoe.board', '../compo
     playAgainBtn.on('click', function(e){
         e.preventDefault;
         startBtn.removeClass('hidden');
+		board.clearBoard();
     });
 
     slider.render();
